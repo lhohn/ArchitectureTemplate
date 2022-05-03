@@ -21,9 +21,9 @@ namespace Architecture.Database.Migrations
                 {
                     Id = table.Column<long>(type: "bigint", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Login = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
-                    Password = table.Column<string>(type: "nvarchar(1000)", maxLength: 1000, nullable: false),
-                    Salt = table.Column<string>(type: "nvarchar(1000)", maxLength: 1000, nullable: false),
+                    Login = table.Column<string>(type: "varchar(100)", maxLength: 100, nullable: false),
+                    Password = table.Column<string>(type: "varchar(1000)", maxLength: 1000, nullable: false),
+                    Salt = table.Column<string>(type: "varchar(1000)", maxLength: 1000, nullable: false),
                     Roles = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -38,9 +38,9 @@ namespace Architecture.Database.Migrations
                 {
                     Id = table.Column<long>(type: "bigint", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    FirstName = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: true),
-                    LastName = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: true),
-                    Email = table.Column<string>(type: "nvarchar(300)", maxLength: 300, nullable: true),
+                    FirstName = table.Column<string>(type: "varchar(100)", maxLength: 100, nullable: true),
+                    LastName = table.Column<string>(type: "varchar(200)", maxLength: 200, nullable: true),
+                    Email = table.Column<string>(type: "varchar(300)", maxLength: 300, nullable: true),
                     Status = table.Column<int>(type: "int", nullable: false),
                     AuthId = table.Column<long>(type: "bigint", nullable: false)
                 },
@@ -88,7 +88,7 @@ namespace Architecture.Database.Migrations
                 table: "User",
                 column: "Email",
                 unique: true,
-                filter: "[Email] IS NOT NULL");
+                filter: "\"Email\" IS NOT NULL");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

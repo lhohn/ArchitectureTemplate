@@ -18,7 +18,7 @@ builder.Services.AddControllers().AddJsonOptions().AddAuthorizationPolicy();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddSpaStaticFiles("Frontend");
-builder.Services.AddContext<Context>(options => options.UseSqlServer(builder.Services.GetConnectionString(nameof(Context))));
+builder.Services.AddContext<Context>(options => options.UseNpgsql(builder.Services.GetConnectionString(nameof(Context))));
 builder.Services.AddClassesMatchingInterfaces(typeof(IUserService).Assembly, typeof(IUserRepository).Assembly);
 
 var application = builder.Build();
