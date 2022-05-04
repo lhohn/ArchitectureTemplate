@@ -8,9 +8,15 @@ import {MenuItem} from 'primeng/api';
 export class AppNavComponent {
     
     items: MenuItem[];
-
+    endItems: MenuItem[];
     constructor(private readonly appAuthService: AppAuthService) {}
     ngOnInit(){
+        this.endItems = [
+            {
+                label:'Quit',
+                icon:'pi pi-fw pi-power-off',
+                command: () => this.signout()
+            }]
         this.items = [
             {
                 label:'File',
@@ -133,10 +139,6 @@ export class AppNavComponent {
                         ]
                     }
                 ]
-            },
-            {
-                label:'Quit',
-                icon:'pi pi-fw pi-power-off'
             }
         ];
     }
