@@ -19,7 +19,8 @@
         "@angular-devkit/build-angular": "13.3.4",
         "@angular/cli": "13.3.4",
         "@angular/compiler-cli": "13.3.5",
-        "typescript": "4.6.4"
+        "typescript": "4.6.4",
+        "webpack": "^5.72.0"
     },
     "browserslist": [
         "last 1 Chrome version",
@@ -33,6 +34,6 @@
         "restore": "npm install --loglevel=error",
         "start": "ng serve",
         "publish": "ng build --configuration production",
-        "test":"ng build | ng serve"
+        "test": "ng build | ng serve"
     }
 }
